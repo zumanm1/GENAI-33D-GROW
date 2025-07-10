@@ -10,6 +10,9 @@ import time
 import pdfplumber
 import io
 
+# Import GenAI Network Automation module
+from genai_network_automation import show_genai_network_automation
+
 # Custom CSS for modern UI
 st.set_page_config(
     page_title="AI Network Engineering Assistant",
@@ -353,7 +356,7 @@ def main():
             # Navigation
             page = st.selectbox(
                 "Choose a page:",
-                ["🏠 Dashboard", "⚙️ Configuration", "💬 Chat Interface", "📄 Documents", "🌐 Network Ops", "📊 Analytics"],
+                ["🏠 Dashboard", "⚙️ Configuration", "💬 Chat Interface", "📄 Documents", "🌐 Network Ops", "📊 Analytics", "🧠 GenAI Automation"],
                 format_func=lambda x: x.split(" ", 1)[1] if " " in x else x
             )
         else:
@@ -373,6 +376,8 @@ def main():
         show_network_ops()
     elif page == "📊 Analytics":
         show_analytics()
+    elif page == "🧠 GenAI Automation":
+        show_genai_network_automation()
 
 def show_dashboard():
     st.markdown('<h2>🏠 Dashboard</h2>', unsafe_allow_html=True)

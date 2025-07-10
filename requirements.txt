@@ -6,4 +6,6 @@ sentence-transformers>=2.2.0
 requests>=2.31.0
 pdfplumber>=0.9.0
 torch>=2.0.0
-transformers>=4.30.0 
+transformers>=4.30.0
+crewai>=0.1.0
+langchain>=0.1.0 

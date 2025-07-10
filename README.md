@@ -26,6 +26,15 @@ A comprehensive **AI-powered network engineering platform** that combines advanc
 - **Configuration Push**: Deploy configurations to devices
 - **Real-time Monitoring**: Live status and connection health
 
+### 🧠 **GenAI Network Automation**
+- **NLP-to-Cisco CLI**: Natural language to Cisco commands conversion
+- **AI Agent Validation**: CrewAI-powered command validation and cleanup
+- **Smart Deployment**: Automated configuration deployment with validation
+- **Retrieval Operations**: Natural language queries for device information
+- **Multi-Mode Support**: Push Configuration, Retrieve Information, Validate Configuration
+- **Real-time Validation**: Post-deployment verification with AI-generated show commands
+- **Device Inventory**: SQLite-based device management with sample devices
+
 ### 📊 **Analytics & Monitoring**
 - **Interaction Statistics**: Track AI usage patterns
 - **System Health**: Monitor Ollama, ChromaDB, and database status
@@ -69,12 +78,17 @@ A comprehensive **AI-powered network engineering platform** that combines advanc
    ollama pull llama2:latest
    ```
 
-5. **Run the application**
+5. **Initialize the database (for GenAI Network Automation)**
+   ```bash
+   python init_database.py
+   ```
+
+6. **Run the application**
    ```bash
    streamlit run app.py
    ```
 
-6. **Access the app**
+7. **Access the app**
    - Open your browser and go to `http://localhost:8501`
    - Register a new user account
    - Start exploring the features!
@@ -84,11 +98,14 @@ A comprehensive **AI-powered network engineering platform** that combines advanc
 ```
 GENAI-33-D-GROW/
 ├── app.py                 # Main Streamlit application
+├── genai_network_automation.py  # GenAI Network Automation module
+├── init_database.py       # Database initialization script
 ├── requirements.txt       # Python dependencies
 ├── README.md             # Project documentation
 ├── .gitignore            # Git ignore rules
 ├── ai.db                 # AI interaction database (auto-generated)
 ├── user.db               # User management database (auto-generated)
+├── devices.db            # Network devices database (auto-generated)
 └── chroma_db/           # Vector database for documents (auto-generated)
 ```
 
@@ -119,7 +136,14 @@ GENAI-33-D-GROW/
 - **Command Execution**: Run network commands remotely
 - **Configuration Push**: Deploy device configurations
 
-### 6. **Analytics** 📊
+### 6. **GenAI Network Automation** 🧠
+- **Push Configuration**: Convert natural language to Cisco CLI and deploy
+- **Retrieve Information**: Ask questions in natural language to get device info
+- **Validate Configuration**: Generate and execute validation commands
+- **AI Agent Validation**: Automatic command cleanup and validation
+- **Device Selection**: Choose from configured network devices
+
+### 7. **Analytics** 📊
 - **Interaction Stats**: View AI usage patterns
 - **Log Analysis**: Search system logs
 - **User Preferences**: Manage personal settings
@@ -178,6 +202,8 @@ streamlit run app.py --server.port 8501
 - **Netmiko**: Network device automation
 - **PDF Plumber**: PDF text extraction
 - **Jinja2**: Template engine
+- **CrewAI**: AI agent framework for command validation
+- **LangChain**: Language model integration
 
 ## 🔒 Security Considerations
 
